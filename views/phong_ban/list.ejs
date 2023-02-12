@@ -1,0 +1,27 @@
+<%- include ("../layouts/hearder.ejs") %>
+    <div class="container p-3">
+        <h1>Phong Ban</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% pb.forEach((item) => {%>
+                    <tr>
+                        <td scope="row"><%= item.id %></td>
+                        <td><%=  item.name %></td>
+                        <td>
+                            <a href="/phong_ban/edit/<%=  item.id %>" class="btn btn-success">Update</a>
+                            <a href="/phong_ban/delete/<%=  item.id %>" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                <%}); %>
+            </tbody>
+        </table>
+    </div>
+
+<%- include ("../layouts/footer.ejs") %>

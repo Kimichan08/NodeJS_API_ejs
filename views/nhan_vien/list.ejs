@@ -1,0 +1,33 @@
+<%- include ("../layouts/hearder.ejs") %>
+    <div class="container p-3">
+        <h1>Phong Ban</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Image</th>
+                    <th>Salary</th>
+                    <th>Phong ban ID</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% nv.forEach(element => {%>
+                    <tr>
+                        <td scope="row"><%= element.id %></td>
+                        <td><%=  element.name %></td>
+                        <td><img src="/<%= element.image %>" alt="" class="card-img" width="15px"></td>
+                        <td><%= element.salary %></td>
+                        <td><%= element.phongban_id %></td>
+                        <td>
+                            <a href="/nhan_vien/edit/<%=  element.id %>" class="btn btn-success">Update</a>
+                            <a href="/nhan_vien/delete/<%=  element.id %>" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                <%}); %>
+            </tbody>
+        </table>
+    </div>
+
+<%- include ("../layouts/footer.ejs") %>
